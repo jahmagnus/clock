@@ -3,6 +3,7 @@ import time
 from tkinter import *
 
 
+
 def getTime():
     currentDate = datetime.now()
 
@@ -43,11 +44,20 @@ def getMinuteColumns():
     currentMinute = formatMinute()
 
 
-flag = True
-window = Tk()
-img = PhotoImage(file='simpsons.jpg')
+def runInterface():
 
-imgLbl = Label(window, image=img)
+    window = Tk()
+    img = PhotoImage(file='number1.png')
+    imgLbl = Label(window, image=img)
+    imgLbl.grid()
+    window.mainloop()
+
+flag = True
 while flag:
     renderImage()
     time.sleep(5)
+
+
+# interface opens and stays open for the duration, the interface needs to read the output from render image
+# and update with the relevent information. ie, when the minutes change so should the number in the
+# interface should change too
